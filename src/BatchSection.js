@@ -5,7 +5,7 @@ import Axios from 'axios'
 const BASE_CONTEXT_URL = 'http://localhost:3000'
 
 export default function BatchSection() {
-    const [batchStatus, setBatchStatus] = useState({executionDate: '', lastEventId: '', deltaSize: 0})
+    const [batchStatus, setBatchStatus] = useState({ executionDate: '', lastEventId: '', deltaSize: 0 })
 
     const requestBatchStatus = () => {
 
@@ -24,10 +24,18 @@ export default function BatchSection() {
 
     return (
         <div>
-            <label>Última actualización: </label>{batchStatus.executionDate}<br />
-            <label>Cantidad de novedades: </label>{batchStatus.deltaSize}<br />
-            <button onClick={requestBatchStatus}>Consultar última actualización</button>        
-            <button onClick={requestBatchUpdate}>Ejecutar actualización</button>        
+            <div class="component-holder">
+                <label>Última actualización: </label>{batchStatus.executionDate}<br />
+            </div>
+            <div class="component-holder">
+                <label>Cantidad de novedades: </label>{batchStatus.deltaSize}<br />
+            </div>
+            <div class="component-holder">
+                <label>
+                    <button onClick={requestBatchStatus}>Consultar última actualización</button>
+                </label>
+                <button onClick={requestBatchUpdate}>Ejecutar actualización</button>
+            </div>
         </div>
     )
 }
