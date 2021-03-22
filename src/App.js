@@ -30,15 +30,13 @@ function App() {
             state: stateRef.current.value
         }
 
-        Axios.all([
-            Axios.get(BASE_CONTEXT_URL + '/covid/total', { params }),
-            Axios.get(BASE_CONTEXT_URL + '/covid/deaths', { params })
-        ]).then(Axios.spread((...responses) => {
+        const promise1 = Axios.get(BASE_CONTEXT_URL + '/covid/total', { params });
+        const promise2 = Axios.get(BASE_CONTEXT_URL + '/covid/deaths', { params });
 
+        Promise.all([promise1, promise2]).then(function(responses) {
             setTotalCount(responses[0].data)
             setDeceaseCount(responses[1].data)
-
-        })).catch((error) => { console.log(error.message) })
+        }).catch((error) => { console.log(error.message) });
 
     }
 
