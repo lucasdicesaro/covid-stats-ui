@@ -50,42 +50,42 @@ function App() {
             <div>
                 <h2>Filtros</h2>
             </div>
-            <div class="component-holder">
+            <div className="component-holder">
                 <label>Fecha Desde</label>
                 <input ref={symptomDateFromRef} type="text" ></input>
             </div>
 
-            <div class="component-holder">
+            <div className="component-holder">
                 <label>Fecha Hasta</label>
                 <input ref={symptomDateToRef} type="text" ></input>
             </div>
 
-            <div class="component-holder">
+            <div className="component-holder">
                 <label>Edad Desde</label>
                 <input ref={ageFromRef} type="text" ></input>
             </div>
 
-            <div class="component-holder">
+            <div className="component-holder">
                 <label>Edad Hasta</label>
                 <input ref={ageToRef} type="text" ></input>
             </div>
 
-            <div class="component-holder">
+            <div className="component-holder">
                 <label>Género</label>
                 <input ref={genreRef} type="text" ></input>
             </div>
 
-            <div class="component-holder">
+            <div className="component-holder">
                 <label>Provincia</label>
                 <input ref={stateRef} type="text" ></input>
             </div>
 
             <button onClick={requestCounts}>Consultar Totales</button>
-            <div class="component-holder">
+            <div className="component-holder">
                 <label>Total: </label>{totalCount}
             </div>
 
-            <div class="component-holder">
+            <div className="component-holder">
                 <label>Fallecidos: </label>{deceaseCount}
             </div>
 

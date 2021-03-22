@@ -24,13 +24,13 @@ export default function BatchSection() {
 
     return (
         <div>
-            <div class="component-holder">
+            <div className="component-holder">
                 <label>Última actualización: </label>{batchStatus.executionDate}<br />
             </div>
-            <div class="component-holder">
+            <div className="component-holder">
                 <label>Cantidad de novedades: </label>{batchStatus.deltaSize}<br />
             </div>
-            <div class="component-holder">
+            <div className="component-holder">
                 <label>
                     <button onClick={requestBatchStatus}>Consultar última actualización</button>
                 </label>
