@@ -10,7 +10,14 @@ export default function BatchSection() {
     const requestBatchStatus = () => {
 
         Axios.get(BASE_CONTEXT_URL + '/covid/update')
-            .then((response) => { setBatchStatus(response.data) })
+            .then((response) => { 
+		if (response.data) { 
+		  setBatchStatus(response.data)
+		} 
+		else {
+		  console.log('There is no previous updates. Run the first update!') 
+		}	
+	    })
             .catch((error) => { console.log(error.message) })
     }
 
